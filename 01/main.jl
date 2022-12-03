@@ -4,9 +4,6 @@ function sum_string(string)
     # convert to int
     int_vals = map(x -> parse(Int, x), values)
 
-    # show vector
-    #println(int_vals)
-
     return sum(int_vals)
 end
 
@@ -25,8 +22,9 @@ pt1 = split(s, r"\n\n")
 
 sum_vect = map( x -> sum_string(x), pt1)
 
-#println(sum_vect)
 
-println( maximum(sum_vect) )
+res = maximum(sum_vect)
+println("part 1: $res")
 
-println(sum(last_n(sort(sum_vect), 3)))
+res = sum(last_n(sort(sum_vect), 3))
+println("part 2: $res" )
