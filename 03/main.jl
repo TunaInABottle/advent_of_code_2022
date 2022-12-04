@@ -60,7 +60,7 @@ function common_between(string_one, string_two)
     return matches
 end
 
-global elfs = []
+elfs = []
 
 for rucksack_content = eachsplit(raw_cont, "\n")
         global elfs
