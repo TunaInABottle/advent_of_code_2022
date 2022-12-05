@@ -34,6 +34,6 @@ sec_part() {
 # preparing the .jl file with code that will surely be written
 # line_iter="score = 0\n\nfor VAR_NAME = eachsplit(raw_cont, \"\\\\n\")\n\t#@TODO exercise\nend\n\n"
 
-echo -e "include(\"../utils.jl\")\nusing .Fileio\n\nraw_cont = read_txt(\"data.txt\")" >> main.jl
+echo -e "include(\"../utils.jl\")\nusing .Fileio\n\nraw_cont = read_txt(ARGS[1] * \".txt\")" >> main.jl
 sec_part 1 >> main.jl
 sec_part 2 >> main.jl
