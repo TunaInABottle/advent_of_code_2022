@@ -26,7 +26,7 @@ sec_part() {
   local sec_n=${1:?Must provide an argument}
 
   line_iter="solution = 0\n\nfor VAR_NAME = eachsplit(raw_cont, \"\\\\n\")\n\t#@TODO exercise\nend\n\n"
-  section="\n\n##################\n##### PART ${sec_n} #####\n##################\n${line_iter}println(\"part ${sec_n}: \$score\")"
+  section="\n\n##################\n##### PART ${sec_n} #####\n##################\n${line_iter}println(\"part ${sec_n}: \$solution\")"
 #   return section
   echo -e $section
 }
