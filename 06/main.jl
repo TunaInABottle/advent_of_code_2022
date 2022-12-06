@@ -1,13 +1,13 @@
 include("../utils.jl")
 using .Fileio
 
-raw_cont = read_txt(ARGS[1] * ".txt")
+raw_cont::String = read_txt(ARGS[1] * ".txt")
 
 ##################
-function get_marker_pos(communication, unique_markers = 4)
-	buffer = []
+function get_marker_pos(communication::String, unique_markers::Int = 4)
+	buffer::Array{Char,1} = []
 	#index = 0
-	for i in 1:length(communication)
+	for i::Int in 1:length(communication)
 
 		# the character does not appear, append to end
 		push!(buffer, communication[i])
@@ -30,10 +30,10 @@ function get_marker_pos(communication, unique_markers = 4)
 end
 ##################
 
-println("example 1")
 
 if ARGS[1] == "example"
-	for communication = eachsplit(raw_cont, "\n")
+	println("example 1")
+	for communication::String = eachsplit(raw_cont, "\n")
 		println(get_marker_pos(communication))
 	end
 end
@@ -43,7 +43,7 @@ end
 ##################
 
 if ARGS[1] == "data"
-	solution = get_marker_pos(raw_cont)
+	solution::Int = get_marker_pos(raw_cont)
 	println("part 1: $solution")
 end
 
@@ -51,15 +51,15 @@ end
 ##### PART 2 #####
 ##################
 
-println("example 1")
 
 if ARGS[1] == "example"
-	for communication = eachsplit(raw_cont, "\n")
+	println("example 2")
+	for communication::String = eachsplit(raw_cont, "\n")
 		println(get_marker_pos(communication, 14))
 	end
 end
 
 if ARGS[1] == "data"
-	solution = get_marker_pos(raw_cont, 14)
+	solution::Int = get_marker_pos(raw_cont, 14)
 	println("part 2: $solution")
 end
