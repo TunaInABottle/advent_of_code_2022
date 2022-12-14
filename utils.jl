@@ -1,5 +1,5 @@
 module Fileio
-    export read_txt, is_number
+    export read_txt, is_number, print_matrix_string
 
     function read_txt(filename)
         # opening a file in read_mode
@@ -16,5 +16,14 @@ module Fileio
             return true
         end
         return false
+    end
+
+    function print_matrix_string(matrix)
+        for row in eachrow(matrix)
+            for i in 1:length(row)
+                print(row[i])
+            end
+            println()
+        end
     end
 end
