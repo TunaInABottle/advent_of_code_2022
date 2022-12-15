@@ -20,3 +20,4 @@ After installing Julia, open a folder for the day and execute `julia main.jl` . 
 * You can make intervals from `1:n` but not from `n:1`, as the default change step in an interval is `+1`. If you want a reverse interval you have to write `n:-1:1`
 * It supports in-code UNICODE mathematical operands such as `≥` and `∈`;
 * Splitting strings in case you use typing is going to be your nightmare. In order to save as much memory as possible, Julia uses SubString{String} which makes in such a way that no new memory has to be reserved. It is problematic if you want to use Strings though as these are not considered such.
+* The function is not `max()` but `maximum()` to get the highest number. Also note that it takes as argument an array in the base case, so do not try to make the maximum of two integers
