@@ -25,7 +25,7 @@ touch example.txt
 sec_part() {
   local sec_n=${1:?Must provide an argument}
 
-  line_iter="solution::Int = 0\n\nfor VAR_NAME::String = eachsplit(raw_cont, \"\\\\n\")\n\t#@TODO exercise\nend\n\n"
+  line_iter="solution::Int = 0\n\nfor VAR_NAME::String = eachsplit(raw_cont, \"\\\\n\", keepempty = false)\n\t#@TODO exercise\nend\n\n"
   section="\n\n##################\n##### PART ${sec_n} #####\n##################\n${line_iter}println(\"part ${sec_n}: \$solution\")"
 #   return section
   echo -e $section
